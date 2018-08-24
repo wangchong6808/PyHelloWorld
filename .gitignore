@@ -1,0 +1,13 @@
+*.ipr
+*.iws
+.gradle
+build
+.idea
+venv
+*.iml
+.DS_Store
+log/
+out
+.local
+buildSrc
+*-local.yml
