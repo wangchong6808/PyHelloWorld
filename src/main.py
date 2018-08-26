@@ -2,12 +2,9 @@
 # import the draw module
 
 
-import draw
-from draw import clear_screen
-
-from store import add_role
 import sys
-import modules.base.goods
+import modules.mygame.store as store
+import modules.mygame.draw as draw
 
 
 def play_game():
@@ -15,18 +12,16 @@ def play_game():
 
 
 def print_role():
-    print(draw.roles)
+    print(1)
 
 
 def main():
     result = play_game()
-    draw.draw_game(result)
-    clear_screen(result)
     print_role()
-    add_role()
     print_role()
+    store.add_role()
+    print(draw.roles)
     print(sys.path)
-
 
 
 # this means that if this script is executed, then
