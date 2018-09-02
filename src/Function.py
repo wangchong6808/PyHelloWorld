@@ -1,3 +1,6 @@
+from functools import partial
+
+
 def playMusic(instrument, song):
     print("I am playing %s to express '%s'" % (instrument, song))
     return 'success'
@@ -27,7 +30,6 @@ dog.name = 'Dog'
 dog.shout()
 
 
-
 def multi_param(p1, p2=10, *p3, **p4):
     print('p1', p1)
     print('p2', p2)
@@ -37,7 +39,8 @@ def multi_param(p1, p2=10, *p3, **p4):
         print('p4', 'k:%s v:%s' % (k, v))
 
 
-multi_param('hi', 2,3,4,5, name=11)
+multi_param('hi', 2, 3, 4, 5, name=11)
+
 
 def recurse(n):
     if n <= 1:
@@ -59,3 +62,13 @@ def recurse_tail(n):
 
 print(recurse(6))
 print(recurse_tail(6))
+
+
+def multiply(m, n):
+    return m * n
+
+
+# 通过偏函数做柯里化
+fixed_multi = partial(multiply, 100)
+x = fixed_multi(20)
+print(x)
