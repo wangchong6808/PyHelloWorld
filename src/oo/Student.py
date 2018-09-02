@@ -34,6 +34,13 @@ class SeniorStudent(Student):
     def play(self):
         print('this is senior student %s playing' % self.name)
 
+    def __str__(self):
+        return 'this is senior student %s' % self.name
+
+    def __repr__(self):
+        return self.__str__()
+
+
 
 def play(stu):
     stu.play()
@@ -54,3 +61,6 @@ print('is xiaohong student ?', isinstance(xiaohong, Student))
 
 play(xiaoming)
 play(xiaohong)
+print(dir(xiaohong))
+
+print(xiaohong)
